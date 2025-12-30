@@ -1,0 +1,381 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "experience": "Our Experience",
+    "services": "Our Services",
+    "team": "Our Team",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Transforming Data Into Strategic Insights",
+    "subtitle": "Data Analytics & AI Solutions for Government and Business",
+    "cta": "Discover Our Solutions",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "sectionTitle": "About Us",
+    "title": "Who We Are",
+    "description1": "KPAnalytix is a premier data analytics and AI solutions company based in Riyadh, Saudi Arabia. We combine deep expertise in data science, economic policy, and international benchmarking to deliver transformative insights for government institutions and businesses.",
+    "description2": "Our mission is to empower decision-makers with accurate, real-time data intelligence that drives strategic outcomes. We leverage cutting-edge AI technologies and proven methodologies to unlock the full potential of your data assets.",
+    "yearsExperience": "Years of Experience",
+    "projectsDelivered": "Projects Delivered",
+    "countriesServed": "Countries Served",
+    "teamExperts": "Expert Team Members",
+    "readMore": "Learn More About Us"
+  },
+  "aboutPage": {
+    "heroTitle": "Pioneering Data Excellence",
+    "heroSubtitle": "Building the future of data-driven decision making",
+    "missionTitle": "Our Mission",
+    "missionText": "To empower leaders and decision-makers with accurate, timely, and actionable data insights that drive strategic outcomes and support evidence-based policy making.",
+    "visionTitle": "Our Vision",
+    "visionText": "To become the leading data intelligence partner in the region, setting the benchmark for data-driven governance and business excellence.",
+    "historyTitle": "Our Story",
+    "historyText1": "KPAnalytix was founded by Dr. Konrad Pesendorfer, a globally accomplished executive and economist with over two decades of top-tier management experience in official statistics, economic policy, and data analytics.",
+    "historyText2": "With a proven track record of leading and transforming national statistical offices in Austria and Saudi Arabia, overseeing teams of over 1,100 employees, and driving major national initiatives such as the KSA Census 2022, Dr. Pesendorfer brings unparalleled expertise to every engagement.",
+    "historyText3": "Our company combines deep experience of KSA's policy priorities and institutional setup with international experience of economic policy making and cutting-edge data analytics capabilities.",
+    "valuesTitle": "Our Values",
+    "value1Title": "Excellence",
+    "value1Text": "We pursue the highest standards in everything we do, from data quality to client service.",
+    "value2Title": "Innovation",
+    "value2Text": "We continuously explore new technologies and methodologies to deliver cutting-edge solutions.",
+    "value3Title": "Integrity",
+    "value3Text": "We maintain the highest ethical standards and ensure complete transparency in our work.",
+    "value4Title": "Impact",
+    "value4Text": "We focus on delivering measurable outcomes that make a real difference for our clients."
+  },
+  "services": {
+    "sectionTitle": "Our Services",
+    "title": "Comprehensive Data Solutions",
+    "subtitle": "From predictive analytics to strategic policy advisory, we offer end-to-end services",
+    "viewAll": "View All Services",
+    "learnMore": "Learn More",
+    "categories": {
+      "data": "Data Solutions",
+      "policy": "Policy Advisory",
+      "benchmarking": "International Benchmarking"
+    },
+    "items": {
+      "predictiveAnalytics": {
+        "title": "Predictive Analytics",
+        "description": "Advanced analytics using historical data, statistical techniques, and machine learning to forecast future outcomes, behaviors, and trends.",
+        "features": ["GDP Nowcasting", "Real-time Financial Monitoring", "Sales Forecasting", "Risk Prediction"]
+      },
+      "forecasting": {
+        "title": "Forecasting",
+        "description": "Predictions about future trends based on historical data, market conditions, and statistical models for strategic planning.",
+        "features": ["GDP Growth Forecasts", "Population Forecasts", "Tourism Demand", "Economic Projections"]
+      },
+      "dashboards": {
+        "title": "Dashboards & Visualization",
+        "description": "Interactive dashboards converting complex data into clear visual representations for real-time insights and decision-making.",
+        "features": ["Macroeconomic Dashboards", "Executive Performance", "KPI Monitoring", "Real-time Analytics"]
+      },
+      "dataGovernance": {
+        "title": "Data Management & Governance",
+        "description": "Strategic frameworks of policies, processes, and standards to manage, protect, and ensure data quality throughout its lifecycle.",
+        "features": ["Master Data Management", "Data Strategy", "Open Data Initiatives", "Data Quality"]
+      },
+      "aiModels": {
+        "title": "AI Models",
+        "description": "Advanced machine learning and AI solutions that recognize patterns, make predictions, and generate insights from complex data.",
+        "features": ["Natural Language Processing", "Classification Tasks", "Document Processing", "Pattern Recognition"]
+      },
+      "statisticalConsulting": {
+        "title": "Statistical Consulting",
+        "description": "Expert advisory on modern statistical methods, study design, data analysis, and interpretation for evidence-based decisions.",
+        "features": ["Statistical Office Building", "Survey Design", "Quality Control", "Methodology Assessment"]
+      },
+      "kpiMeasurement": {
+        "title": "KPI Definition & Measurement",
+        "description": "Identifying, defining, and tracking quantifiable metrics that measure progress toward strategic objectives.",
+        "features": ["Vision 2030 Monitoring", "Performance Management", "Operational Efficiency", "Progress Tracking"]
+      },
+      "policyDesign": {
+        "title": "Economic Policy Design",
+        "description": "Data-driven development, implementation, and evaluation of public policy interventions to achieve national objectives.",
+        "features": ["Housing Affordability", "Competition Policy", "Cost-of-Living Analysis", "Policy Evaluation"]
+      },
+      "impactAssessment": {
+        "title": "Economic Impact Assessment",
+        "description": "Systematic analysis measuring economic effects of policies, projects, and investments on employment, GDP, and revenues.",
+        "features": ["Infrastructure Investment", "Tax Reform Impact", "Major Events Analysis", "Policy Simulation"]
+      },
+      "internationalEconomics": {
+        "title": "International Economics",
+        "description": "Analysis of global economic development and cross-border economic interactions including trade, investment, and capital flows.",
+        "features": ["Trade Tariff Analysis", "FDI Attraction", "Geopolitical Impact", "Global Markets"]
+      },
+      "bestPractices": {
+        "title": "International Best Practices",
+        "description": "Evidence-based approaches that deliver superior results, serving as global standards for effectiveness and efficiency.",
+        "features": ["Data Ecosystems", "Policy Solutions", "Knowledge Transfer", "Implementation Support"]
+      },
+      "benchmarking": {
+        "title": "International Benchmarking",
+        "description": "Systematic process of measuring and comparing performance against standardized metrics and global best practices.",
+        "features": ["Competitiveness Rankings", "Performance Assessment", "Peer Comparison", "Strategic Positioning"]
+      }
+    }
+  },
+  "servicesPage": {
+    "heroTitle": "Data-Driven Excellence",
+    "heroSubtitle": "Comprehensive solutions that transform how organizations leverage data",
+    "dataTitle": "Data Solutions & Ecosystem Advisory",
+    "dataDescription": "Transform your data into actionable insights with our comprehensive analytics services",
+    "policyTitle": "Strategic Policy Advisory",
+    "policyDescription": "Evidence-based policy design and evaluation for impactful decision-making",
+    "benchmarkTitle": "International Benchmarking",
+    "benchmarkDescription": "Position your organization against global standards and best practices"
+  },
+  "experience": {
+    "sectionTitle": "Our Experience",
+    "title": "Proven Expertise Across Sectors",
+    "subtitle": "Delivering excellence in data analytics and policy advisory",
+    "viewAll": "View All Experience",
+    "categories": {
+      "statistics": "Statistics & Census",
+      "economics": "Economics & Finance",
+      "dataScience": "Data Science & AI",
+      "advisory": "Strategic Advisory"
+    },
+    "items": {
+      "census": "Census Operations",
+      "nationalAccounts": "National Accounts",
+      "gdp": "GDP Measurement",
+      "macroeconomics": "Macroeconomics",
+      "socialStatistics": "Social Statistics",
+      "businessStatistics": "Business Statistics",
+      "spatialAnalysis": "Spatial Analysis",
+      "tourism": "Tourism Analytics",
+      "medical": "Medical Statistics",
+      "construction": "Construction Data",
+      "finance": "Financial Analysis",
+      "sustainability": "Sustainability Metrics",
+      "dashboards": "Dashboard Development",
+      "decisionSupport": "Decision Support Systems",
+      "modeling": "Statistical Modeling",
+      "aiSolutions": "AI Solutions",
+      "surveys": "Survey Design",
+      "indices": "Index Development",
+      "businessIntelligence": "Business Intelligence",
+      "strategy": "Strategic Planning",
+      "orgDevelopment": "Organizational Development",
+      "restructuring": "Restructuring",
+      "gis": "GIS Solutions",
+      "innovation": "Innovation Consulting",
+      "dataEngineering": "Data Engineering"
+    }
+  },
+  "experiencePage": {
+    "heroTitle": "Two Decades of Excellence",
+    "heroSubtitle": "Transformative impact across statistics, economics, and data science",
+    "statsTitle": "By The Numbers",
+    "statYears": "30+",
+    "statYearsLabel": "Years Experience",
+    "statCountries": "10+",
+    "statCountriesLabel": "Countries Served",
+    "statTeams": "1,900+",
+    "statTeamsLabel": "Team Members Led",
+    "statProjects": "100+",
+    "statProjectsLabel": "Major Projects",
+    "highlightsTitle": "Key Achievements",
+    "highlight1Title": "National Statistical Leadership",
+    "highlight1Text": "Led and transformed two National Statistical Offices - Statistics Austria (800+ FTEs) and General Authority for Statistics Saudi Arabia (1,100+ FTEs)",
+    "highlight2Title": "Census Excellence",
+    "highlight2Text": "Designed and led the first Register-based Census in Austria (2011) and the KSA 2022 Census Project",
+    "highlight3Title": "NEOM Data Function",
+    "highlight3Text": "Built a brand-new Economics Data & Statistics Function for NEOM, including forecasting models for population, macroeconomics, and tourism",
+    "highlight4Title": "International Leadership",
+    "highlight4Text": "Chairman of various international Statistics Committees (EU, OECD, World Bank), developing new international statistical standards"
+  },
+  "team": {
+    "sectionTitle": "Our Team",
+    "title": "Meet Our Leadership",
+    "subtitle": "World-class professionals with decades of experience in data science, AI, and statistics",
+    "viewAll": "Meet The Full Team",
+    "founder": {
+      "name": "Dr. Konrad Pesendorfer",
+      "role": "Founder & CEO",
+      "bio": "Globally accomplished executive and economist with over two decades of top-tier management experience in official statistics, economic policy, and data analytics."
+    },
+    "cofounder": {
+      "name": "Dr. Hend Aljobaily",
+      "role": "Co-Founder & Chief Data Analytics & AI",
+      "bio": "Distinguished Chief Data Scientist and innovation leader with expertise in AI-driven decision-making, advanced analytics, and data-driven transformation at national scale."
+    }
+  },
+  "teamPage": {
+    "heroTitle": "World-Class Leadership",
+    "heroSubtitle": "Bringing decades of global experience to every engagement",
+    "founderSection": "Leadership Team",
+    "founderFullBio": "Dr. Konrad Pesendorfer is a globally accomplished executive and economist, recognized for visionary leadership and transformative impact in official statistics, economic policy, and data analytics. With over two decades of top-tier management experience, Dr. Pesendorfer has driven innovation and modernization as Executive Director for Economics, Data & Statistics at NEOM and previously as Chief Statistician and President at the General Authority for Statistics in Saudi Arabia.",
+    "founderAchievements": "Key Achievements",
+    "achievement1": "Led Statistics Austria (800+ FTEs) and GASTAT Saudi Arabia (1,100+ FTEs)",
+    "achievement2": "Designed and led the KSA 2022 Census Project",
+    "achievement3": "Chairman of OECD Committee on Statistics and Statistical Policy",
+    "achievement4": "Economic Policy Advisor to the Austrian Prime Minister",
+    "achievement5": "Built forecasting models for NEOM (Population, Macroeconomics, Tourism)",
+    "achievement6": "Member of the Austrian Fiscal Council",
+    "education": "Education",
+    "educationText": "Ph.D. in Economics from the University of Economics and Business Administration in Vienna",
+    "experience": "Experience",
+    "experienceText": "Fluent in English, French, and German. 30+ years in statistical leadership.",
+    "residency": "Based in Saudi Arabia since 2020, holder of premium residency visa",
+    "cofounderFullBio": "Dr. Hend Aljobaily is a distinguished Chief Data Scientist and innovation leader at NEOM, where she plays a pivotal role in shaping the future of data, statistics, and AI-driven decision-making at national scale. She brings a rare blend of scientific rigor, strategic leadership, and execution excellence. In her dual leadership journey at NEOM—as Chief Data Scientist and Deputy Executive Director of Data & Statistics—Dr. Aljobaily is driving the design and adoption of advanced analytics, machine learning, and statistical frameworks that enable evidence-based policymaking and transformative insights across complex, data-intensive domains.",
+    "cofounderAchievements": "Key Achievements",
+    "cofounderAchievement1": "Chief Data Scientist & Deputy Executive Director at NEOM",
+    "cofounderAchievement2": "Director of Innovation Lab at General Authority For Statistics",
+    "cofounderAchievement3": "Strategy Analytics Section Head at Saudi Tourism Authority",
+    "cofounderAchievement4": "Advanced expertise in AI, ML, Big Data, and Predictive Modeling",
+    "cofounderAchievement5": "International experience in data analytics (USA & Saudi Arabia)",
+    "cofounderAchievement6": "Builds high-performing data science teams and champions innovation",
+    "cofounderEducation": "Education",
+    "cofounderEducationText": "Ph.D.",
+    "cofounderExpertise": "Expertise",
+    "cofounderExpertiseText": "AI, Machine Learning, Big Data, Predictive Modeling, Statistical Consulting"
+  },
+  "contact": {
+    "sectionTitle": "Contact Us",
+    "title": "Let's Transform Your Data",
+    "subtitle": "Ready to unlock the power of your data? Get in touch with our team.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company/Organization",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We'll get back to you soon.",
+      "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "title": "Get In Touch",
+      "address": "Address",
+      "addressValue": "[Address Line 1]\n[Address Line 2]\nRiyadh, Saudi Arabia",
+      "email": "Email",
+      "emailValue": "[email@kpanalytix.com]",
+      "phone": "Phone",
+      "phoneValue": "[+966 XX XXX XXXX]",
+      "crn": "Commercial Registration",
+      "crnValue": "[CRN Number]",
+      "trn": "Tax Registration",
+      "trnValue": "[TRN Number]"
+    }
+  },
+  "footer": {
+    "tagline": "Transforming data into strategic insights for government and business excellence.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactUs": "Contact Us",
+    "copyright": "© 2025 KPAnalytix. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "chatbot": {
+    "title": "KPA Assistant",
+    "placeholder": "Ask me anything about KPAnalytix...",
+    "greeting": "Hello! I'm your KPAnalytix assistant. How can I help you today?",
+    "suggestions": [
+      "What services do you offer?",
+      "Tell me about the team",
+      "How can I contact you?",
+      "What is your experience?"
+    ]
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "backToHome": "Back to Home",
+    "learnMore": "Learn More",
+    "viewMore": "View More",
+    "close": "Close"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 2025",
+    "intro": {
+      "title": "Introduction",
+      "text": "KPAnalytix (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage our services."
+    },
+    "collection": {
+      "title": "Information We Collect",
+      "text": "We may collect information about you in a variety of ways, including:",
+      "item1": "Personal Data: Name, email address, phone number, and other contact information you provide",
+      "item2": "Business Information: Company name, job title, and business requirements",
+      "item3": "Technical Data: IP address, browser type, operating system, and usage patterns",
+      "item4": "Communication Data: Records of correspondence and feedback"
+    },
+    "use": {
+      "title": "How We Use Your Information",
+      "text": "We use the information we collect to:",
+      "item1": "Provide, operate, and maintain our services",
+      "item2": "Respond to your inquiries and fulfill your requests",
+      "item3": "Send administrative information and updates",
+      "item4": "Improve our website and services"
+    },
+    "security": {
+      "title": "Data Security",
+      "text": "We implement appropriate technical and organizational security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security."
+    },
+    "cookies": {
+      "title": "Cookies and Tracking",
+      "text": "We may use cookies and similar tracking technologies to track activity on our website and improve user experience. You can instruct your browser to refuse all cookies or indicate when a cookie is being sent."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "text": "Depending on your location, you may have certain rights regarding your personal information:",
+      "item1": "Right to access and receive a copy of your personal data",
+      "item2": "Right to rectify inaccurate personal data",
+      "item3": "Right to request deletion of your personal data",
+      "item4": "Right to withdraw consent at any time"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "text": "If you have questions about this Privacy Policy or our privacy practices, please contact us at privacy@kpanalytix.com"
+    }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "lastUpdated": "Last updated: January 2025",
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "text": "By accessing and using the KPAnalytix website and services, you accept and agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services."
+    },
+    "services": {
+      "title": "Our Services",
+      "text": "KPAnalytix provides data analytics, AI solutions, and consulting services. Our services include but are not limited to:",
+      "item1": "Data analytics and visualization",
+      "item2": "AI and machine learning solutions",
+      "item3": "Statistical consulting and policy advisory",
+      "item4": "International benchmarking services"
+    },
+    "intellectual": {
+      "title": "Intellectual Property",
+      "text": "All content, features, and functionality on this website are owned by KPAnalytix and are protected by international copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission."
+    },
+    "confidentiality": {
+      "title": "Confidentiality",
+      "text": "We treat all client information with strict confidentiality. Any data, documents, or information shared with us in the course of our engagement will be kept confidential and will not be disclosed to third parties without your consent, except as required by law."
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "text": "To the fullest extent permitted by law, KPAnalytix shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services or website."
+    },
+    "termination": {
+      "title": "Termination",
+      "text": "We reserve the right to terminate or suspend access to our services at any time, without prior notice, for conduct that we believe violates these Terms or is harmful to other users, us, or third parties."
+    },
+    "governing": {
+      "title": "Governing Law",
+      "text": "These Terms shall be governed by and construed in accordance with the laws of the Kingdom of Saudi Arabia. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Riyadh."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "text": "For any questions regarding these Terms and Conditions, please contact us at legal@kpanalytix.com"
+    }
+  }
+}

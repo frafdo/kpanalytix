@@ -1,0 +1,224 @@
+/**
+ * @file About.module.css
+ * @description About page - centered, brand colors, card gradients
+ */
+
+.about {
+  overflow-x: hidden;
+}
+
+/* Hero */
+.hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-32) var(--spacing-6) var(--spacing-16);
+  position: relative;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.heroGradient {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(28, 4, 138, 0.25) 0%, transparent 60%);
+}
+
+.heroPattern {
+  display: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.heroLabel {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-3);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, var(--font-size-5xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-5);
+  line-height: var(--line-height-tight);
+}
+
+.heroSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Section Labels */
+.sectionLabel {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-3);
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 4vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-10);
+  text-align: center;
+}
+
+/* Mission Section */
+.missionSection {
+  padding: var(--spacing-16) var(--spacing-6);
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-5);
+  max-width: var(--container-lg);
+  margin: 0 auto;
+}
+
+.missionCard {
+  background: var(--card-gradient);
+  border: 1px solid var(--glass-border);
+  padding: var(--spacing-8);
+  border-radius: var(--border-radius-xl);
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.missionCard:hover {
+  background: var(--card-gradient-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-4px);
+}
+
+.missionCard h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.missionCard p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* History Section */
+.historySection {
+  padding: var(--spacing-16) var(--spacing-6);
+}
+
+.historyContent {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.historyContent p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-5);
+}
+
+.historyContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Values Section */
+.valuesSection {
+  padding: var(--spacing-16) var(--spacing-6);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-5);
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+.valueCard {
+  background: var(--card-gradient);
+  border: 1px solid var(--glass-border);
+  padding: var(--spacing-6);
+  border-radius: var(--border-radius-xl);
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.valueCard:hover {
+  background: var(--card-gradient-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-4px);
+}
+
+.valueCard h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.valueCard p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-24) var(--spacing-4) var(--spacing-12);
+  }
+
+  .missionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .missionSection,
+  .historySection,
+  .valuesSection {
+    padding: var(--spacing-12) var(--spacing-4);
+  }
+}

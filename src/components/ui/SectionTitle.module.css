@@ -1,0 +1,81 @@
+/**
+ * @file SectionTitle.module.css
+ * @description Styles for SectionTitle component
+ */
+
+.sectionTitle {
+  margin-bottom: var(--spacing-12);
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-3);
+}
+
+.title {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-4);
+  line-height: var(--line-height-tight);
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  max-width: 600px;
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+.center .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--border-radius-full);
+  margin-top: var(--spacing-4);
+}
+
+.center .underline {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Light variant (for dark backgrounds) */
+.light .label {
+  color: var(--color-tertiary);
+}
+
+.light .title {
+  color: var(--color-white);
+}
+
+.light .subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.light .underline {
+  background: linear-gradient(90deg, var(--color-tertiary), var(--color-secondary));
+}

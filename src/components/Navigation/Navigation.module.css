@@ -1,0 +1,89 @@
+/**
+ * @file Navigation.module.css
+ * @description Full-screen navigation - 100% coverage, centered
+ */
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: var(--z-navigation);
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  overflow: hidden;
+  text-align: center;
+}
+
+.navLink {
+  display: block;
+  font-size: clamp(2rem, 5vw, var(--font-size-5xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  position: relative;
+  padding: var(--spacing-2) var(--spacing-6);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--color-secondary);
+  transition: width var(--transition-normal) var(--ease-out-expo);
+}
+
+.navLink:hover {
+  color: var(--color-secondary);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: var(--color-secondary);
+}
+
+.navLink.active::after {
+  width: 60%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navLink {
+    font-size: var(--font-size-3xl);
+  }
+}
