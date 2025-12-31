@@ -43,7 +43,7 @@ function Header() {
         <div className={styles.container}>
           {/* Logo - Full width stretch */}
           <Link to="/" className={styles.logo} aria-label="KPAnalytix Home">
-            <img src="/logo.svg" alt="KPAnalytix" className={styles.logoImg} />
+            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="KPAnalytix" className={styles.logoImg} />
           </Link>
 
           {/* Right controls */}

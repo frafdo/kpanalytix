@@ -259,7 +259,7 @@ function Services() {
           loop
           playsInline
         >
-          <source src="/videos/services-bg.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}videos/services-bg.mp4`} type="video/mp4" />
         </video>
         <div className={styles.videoOverlay}></div>
         <div className={styles.videoFade}></div>

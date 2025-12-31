@@ -59,7 +59,7 @@ function Home() {
             loop 
             playsInline
           >
-            <source src="/videos/home-bg.mp4" type="video/mp4" />
+            <source src={`${import.meta.env.BASE_URL}videos/home-bg.mp4`} type="video/mp4" />
           </video>
           <div className={styles.videoOverlay}></div>
           <div className={styles.videoFade}></div>

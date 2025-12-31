@@ -28,7 +28,7 @@ function Footer() {
     <footer className={styles.footer}>
       {/* Full-width Logo */}
       <div className={styles.logoSection}>
-        <img src="/logo.svg" alt="KPAnalytix" className={styles.fullLogo} />
+        <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="KPAnalytix" className={styles.fullLogo} />
       </div>
 
       <div className={styles.content}>
