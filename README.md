@@ -72,7 +72,10 @@ KPAnalytix website is a professional B2B/B2G landing page designed with a minima
 ```
 kpanalytix/
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.svg
+│   └── videos/
+│       ├── home-bg.mp4
+│       └── services-bg.mp4
 ├── src/
 │   ├── components/
 │   │   ├── Header/
@@ -85,7 +88,7 @@ kpanalytix/
 │   │   │   ├── Navigation.jsx
 │   │   │   └── Navigation.module.css
 │   │   ├── Chatbot/
-│   │   │   ├── Chatbot.jsx
+│   │   │   ├── Chatbot.jsx         # GPT-4o-mini powered
 │   │   │   └── Chatbot.module.css
 │   │   └── ui/
 │   │       ├── Button.jsx
@@ -112,14 +115,14 @@ kpanalytix/
 │   ├── locales/
 │   │   ├── en.json          # English translations
 │   │   └── ar.json          # Arabic translations
-│   ├── data/
-│   │   └── chatbotData.js   # FAQ responses
 │   ├── styles/
 │   │   ├── variables.css    # CSS custom properties
 │   │   └── globals.css      # Global styles
 │   ├── App.jsx              # Main app component
 │   ├── main.jsx             # Entry point
 │   └── i18n.js              # i18n configuration
+├── .env.example             # Environment variables template
+├── .gitignore
 ├── index.html
 ├── package.json
 ├── vite.config.js
@@ -265,31 +268,25 @@ Features:
 **Location**: `src/components/Chatbot/`
 
 Features:
-- FAQ-based responses (no AI API required)
-- Bilingual responses
-- Suggestion chips
-- Links to relevant pages
+- **GPT-4o-mini powered** AI assistant
+- Scoped to KPAnalytix information only
+- Bilingual responses (English/Arabic)
+- Suggestion chips for quick questions
 - Typing indicator
 - Mobile-responsive
 
-**Adding FAQ Responses**:
-Edit `src/data/chatbotData.js`:
+**Setup**:
+1. Copy `.env.example` to `.env`
+2. Add your OpenAI API key:
+   ```
+   VITE_OPENAI_API_KEY=your_api_key_here
+   ```
 
-```javascript
-{
-  keywords: ['keyword1', 'keyword2'],
-  response: {
-    en: {
-      text: 'English response',
-      link: { path: '/page', text: 'Link Text' }
-    },
-    ar: {
-      text: 'Arabic response',
-      link: { path: '/page', text: 'نص الرابط' }
-    }
-  }
-}
-```
+**Security Note**:
+For production, do NOT expose your API key in the frontend. Instead:
+- Use a backend proxy (Node.js, Python, etc.)
+- Use serverless functions (Vercel Edge Functions, Netlify Functions, AWS Lambda)
+- The API key should only be used server-side
 
 ### Button Component
 **Location**: `src/components/ui/Button.jsx`
@@ -472,9 +469,10 @@ npx vercel
 | `src/App.jsx` | Main app with routing |
 | `src/styles/variables.css` | Design tokens |
 | `src/styles/globals.css` | Global styles |
-| `src/data/chatbotData.js` | FAQ responses |
 | `src/locales/en.json` | English translations |
 | `src/locales/ar.json` | Arabic translations |
+| `.env.example` | Environment variables template |
+| `public/videos/` | Background videos for Home and Services pages |
 
 ---
 

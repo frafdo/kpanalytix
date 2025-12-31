@@ -1,6 +1,6 @@
 /**
  * @file Services.jsx
- * @description Services page with smooth transitions - fixed double scroll
+ * @description Services page with smooth transitions and auto-advance
  */
 
 import { useState, useEffect, useRef, useCallback } from 'react'
@@ -15,10 +15,13 @@ function Services() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
+  const [isAutoPlay, setIsAutoPlay] = useState(true)
   const containerRef = useRef(null)
   const lastScrollTime = useRef(0)
   const touchStartY = useRef(0)
+  const autoPlayTimer = useRef(null)
   const scrollCooldown = 1200 // ms between scrolls
+  const autoPlayInterval = 6000 // 6 seconds per slide
 
   const services = [
     { key: 'predictiveAnalytics', id: 'predictive-analytics' },
@@ -37,29 +40,69 @@ function Services() {
 
   const totalSlides = services.length + 1
 
-  const goToSlide = useCallback((index) => {
+  // Auto-advance slides
+  useEffect(() => {
+    if (!isAutoPlay || isAnimating) return
+
+    autoPlayTimer.current = setInterval(() => {
+      setDirection(1)
+      setIsAnimating(true)
+      setCurrentIndex((prev) => (prev + 1) % totalSlides)
+      lastScrollTime.current = Date.now()
+    }, autoPlayInterval)
+
+    return () => {
+      if (autoPlayTimer.current) {
+        clearInterval(autoPlayTimer.current)
+      }
+    }
+  }, [isAutoPlay, isAnimating, totalSlides, autoPlayInterval])
+
+  // Pause auto-play on user interaction, resume after delay
+  const pauseAutoPlay = useCallback(() => {
+    setIsAutoPlay(false)
+    if (autoPlayTimer.current) {
+      clearInterval(autoPlayTimer.current)
+    }
+    // Resume auto-play after 15 seconds of no interaction
+    setTimeout(() => {
+      setIsAutoPlay(true)
+    }, 15000)
+  }, [])
+
+  const goToSlide = useCallback((index, fromUser = true) => {
     const now = Date.now()
     if (now - lastScrollTime.current < scrollCooldown) return
     if (isAnimating || index === currentIndex) return
     if (index < 0 || index >= totalSlides) return
     
+    if (fromUser) pauseAutoPlay()
+    
     lastScrollTime.current = now
     setDirection(index > currentIndex ? 1 : -1)
     setIsAnimating(true)
     setCurrentIndex(index)
-  }, [currentIndex, isAnimating, totalSlides, scrollCooldown])
+  }, [currentIndex, isAnimating, totalSlides, scrollCooldown, pauseAutoPlay])
 
   const goNext = useCallback(() => {
+    pauseAutoPlay()
     if (currentIndex < totalSlides - 1) {
-      goToSlide(currentIndex + 1)
+      goToSlide(currentIndex + 1, false)
+    } else {
+      // Loop back to start
+      goToSlide(0, false)
     }
-  }, [currentIndex, totalSlides, goToSlide])
+  }, [currentIndex, totalSlides, goToSlide, pauseAutoPlay])
 
   const goPrev = useCallback(() => {
+    pauseAutoPlay()
     if (currentIndex > 0) {
-      goToSlide(currentIndex - 1)
+      goToSlide(currentIndex - 1, false)
+    } else {
+      // Loop to end
+      goToSlide(totalSlides - 1, false)
     }
-  }, [currentIndex, goToSlide])
+  }, [currentIndex, totalSlides, goToSlide, pauseAutoPlay])
 
   // Handle wheel events with strict debouncing
   useEffect(() => {
@@ -69,6 +112,7 @@ function Services() {
 
     const handleWheel = (e) => {
       e.preventDefault()
+      pauseAutoPlay()
       
       const now = Date.now()
       if (now - lastScrollTime.current < scrollCooldown || isAnimating) {
@@ -105,12 +149,13 @@ function Services() {
       }
       if (scrollTimeout) clearTimeout(scrollTimeout)
     }
-  }, [isAnimating, goNext, goPrev, scrollCooldown])
+  }, [isAnimating, goNext, goPrev, scrollCooldown, pauseAutoPlay])
 
   // Handle touch events
   useEffect(() => {
     const handleTouchStart = (e) => {
       touchStartY.current = e.touches[0].clientY
+      pauseAutoPlay()
     }
 
     const handleTouchEnd = (e) => {
@@ -140,7 +185,7 @@ function Services() {
         container.removeEventListener('touchend', handleTouchEnd)
       }
     }
-  }, [isAnimating, goNext, goPrev, scrollCooldown])
+  }, [isAnimating, goNext, goPrev, scrollCooldown, pauseAutoPlay])
 
   // Handle keyboard
   useEffect(() => {
@@ -205,6 +250,21 @@ function Services() {
 
   return (
     <div className={styles.servicesWrapper}>
+      {/* Video Background - loops continuously */}
+      <div className={styles.videoContainer}>
+        <video 
+          className={styles.videoBackground}
+          autoPlay 
+          muted 
+          loop
+          playsInline
+        >
+          <source src="/videos/services-bg.mp4" type="video/mp4" />
+        </video>
+        <div className={styles.videoOverlay}></div>
+        <div className={styles.videoFade}></div>
+      </div>
+
       <div 
         className={styles.services}
         ref={containerRef}
@@ -275,16 +335,6 @@ function Services() {
               transition={{ duration: 0.8, ease: [0.32, 0.72, 0, 1] }}
               onAnimationComplete={handleAnimationComplete}
             >
-              <div className={styles.imageContainer}>
-                <motion.div 
-                  className={styles.imagePlaceholder}
-                  initial={{ scale: 1.1 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 1.2, ease: [0.32, 0.72, 0, 1] }}
-                />
-                <div className={styles.imageFade}></div>
-              </div>
-              
               <div className={styles.sectionContent}>
                 <div className={styles.serviceInfo}>
                   <motion.h2 

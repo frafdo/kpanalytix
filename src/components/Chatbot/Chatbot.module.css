@@ -9,8 +9,8 @@
   bottom: var(--spacing-6);
   right: var(--spacing-6);
   z-index: var(--z-chatbot);
-  width: 120px;
-  height: 120px;
+  width: 84px;
+  height: 84px;
   border-radius: var(--border-radius-full);
   background: transparent;
   border: none;
@@ -74,8 +74,8 @@
 }
 
 .chatButton svg {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   position: relative;
   z-index: 2;
   color: var(--color-white);
@@ -351,10 +351,59 @@
   transform: scale(1.05);
 }
 
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .sendBtn svg {
   width: 18px;
   height: 18px;
   color: var(--color-white);
+}
+
+/* Typing Indicator */
+.typingIndicator {
+  display: flex;
+  gap: 4px;
+  padding: var(--spacing-2);
+}
+
+.typingIndicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--border-radius-full);
+  background: var(--color-secondary);
+  animation: typingBounce 1.4s infinite ease-in-out both;
+}
+
+.typingIndicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typingIndicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingBounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Powered By Notice */
+.poweredBy {
+  padding: var(--spacing-2);
+  text-align: center;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive */
@@ -362,13 +411,13 @@
   .chatButton {
     bottom: var(--spacing-4);
     right: var(--spacing-4);
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
   }
 
   .chatButton svg {
-    width: 32px;
-    height: 32px;
+    width: 22px;
+    height: 22px;
   }
 
   .chatWindow {
@@ -399,8 +448,8 @@
   }
 
   [dir="rtl"] .chatButton svg {
-    width: 32px;
-    height: 32px;
+    width: 22px;
+    height: 22px;
   }
 
   [dir="rtl"] .chatWindow {

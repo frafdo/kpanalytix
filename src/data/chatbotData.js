@@ -1,176 +1,203 @@
 /**
  * @file chatbotData.js
- * @description FAQ responses for the chatbot
- * @structure Each response includes:
- * - keywords: Array of trigger words/phrases
- * - response: Object with 'en' and 'ar' translations
- *   - text: The response message
- *   - link: Optional link to relevant page
+ * @description FAQ responses for chatbot fallback (when no API key)
  */
 
 export const chatbotResponses = [
-  // Services
   {
-    keywords: ['service', 'services', 'offer', 'provide', 'what do you do', 'خدمات', 'خدمة', 'تقدمون'],
+    keywords: ['hello', 'hi', 'hey', 'مرحبا', 'اهلا', 'السلام'],
     response: {
-      en: {
-        text: 'We offer comprehensive data analytics and AI solutions including: Predictive Analytics, Forecasting, Dashboard Development, AI Models, Data Governance, Statistical Consulting, KPI Measurement, and Strategic Policy Advisory. Our services help governments and businesses make data-driven decisions.',
+      en: { text: "Hello! Welcome to KPAnalytix. How can I help you today? I can tell you about our services, team, or help you get in touch with us." },
+      ar: { text: "مرحباً! أهلاً بك في KPAnalytix. كيف يمكنني مساعدتك اليوم؟ يمكنني إخبارك عن خدماتنا أو فريقنا أو مساعدتك في التواصل معنا." }
+    }
+  },
+  {
+    keywords: ['services', 'offer', 'provide', 'do', 'خدمات', 'تقدم', 'تقدمون'],
+    response: {
+      en: { 
+        text: "We offer 12 specialized services including: Predictive Analytics, Forecasting, Dashboards, Data Governance, AI Models, Statistical Consulting, KPI Measurement, Policy Design, Impact Assessment, International Economics, Best Practices, and Benchmarking.",
         link: { path: '/services', text: 'View All Services' }
       },
-      ar: {
-        text: 'نقدم حلول تحليل البيانات والذكاء الاصطناعي الشاملة بما في ذلك: التحليلات التنبؤية، التنبؤ، تطوير لوحات المعلومات، نماذج الذكاء الاصطناعي، حوكمة البيانات، الاستشارات الإحصائية، قياس مؤشرات الأداء، والاستشارات السياسية الاستراتيجية.',
+      ar: { 
+        text: "نقدم 12 خدمة متخصصة تشمل: التحليلات التنبؤية، التنبؤ، لوحات المعلومات، حوكمة البيانات، نماذج الذكاء الاصطناعي، الاستشارات الإحصائية، قياس مؤشرات الأداء، تصميم السياسات، تقييم الأثر، الاقتصاد الدولي، أفضل الممارسات، والمقارنة المعيارية.",
         link: { path: '/services', text: 'عرض جميع الخدمات' }
       }
     }
   },
-
-  // Team
   {
-    keywords: ['team', 'founder', 'ceo', 'who', 'konrad', 'pesendorfer', 'فريق', 'مؤسس', 'كونراد'],
+    keywords: ['predictive', 'analytics', 'forecast', 'تنبؤ', 'تحليلات'],
     response: {
-      en: {
-        text: 'KPAnalytix was founded by Dr. Konrad Pesendorfer, a globally accomplished executive and economist with over 20 years of experience. He has led national statistical offices in Austria and Saudi Arabia, overseeing teams of 1,100+ employees, and served as Chairman of OECD statistics committees.',
+      en: { 
+        text: "Our Predictive Analytics service uses advanced ML algorithms to forecast trends and behaviors. We help you anticipate market changes and make data-driven decisions.",
+        link: { path: '/services#predictive-analytics', text: 'Learn More' }
+      },
+      ar: { 
+        text: "تستخدم خدمة التحليلات التنبؤية لدينا خوارزميات التعلم الآلي المتقدمة للتنبؤ بالاتجاهات والسلوكيات.",
+        link: { path: '/services#predictive-analytics', text: 'اعرف المزيد' }
+      }
+    }
+  },
+  {
+    keywords: ['ai', 'artificial', 'intelligence', 'machine', 'learning', 'ذكاء', 'اصطناعي'],
+    response: {
+      en: { 
+        text: "We build custom AI and Machine Learning models tailored to your business challenges. Our solutions include NLP, Computer Vision, and predictive modeling.",
+        link: { path: '/services#ai-models', text: 'Explore AI Solutions' }
+      },
+      ar: { 
+        text: "نبني نماذج ذكاء اصطناعي وتعلم آلي مخصصة لتحديات عملك. تشمل حلولنا معالجة اللغة الطبيعية والرؤية الحاسوبية والنمذجة التنبؤية.",
+        link: { path: '/services#ai-models', text: 'استكشف حلول الذكاء الاصطناعي' }
+      }
+    }
+  },
+  {
+    keywords: ['dashboard', 'visualization', 'لوحة', 'معلومات', 'تصور'],
+    response: {
+      en: { 
+        text: "Our Dashboard solutions provide interactive visualizations for real-time insights. We offer KPI tracking, custom reports, and data visualization tailored to your needs.",
+        link: { path: '/services#dashboards', text: 'View Dashboard Services' }
+      },
+      ar: { 
+        text: "توفر حلول لوحات المعلومات لدينا تصورات تفاعلية للحصول على رؤى في الوقت الفعلي.",
+        link: { path: '/services#dashboards', text: 'عرض خدمات لوحات المعلومات' }
+      }
+    }
+  },
+  {
+    keywords: ['team', 'founder', 'ceo', 'who', 'فريق', 'مؤسس', 'من'],
+    response: {
+      en: { 
+        text: "KPAnalytix was founded by Dr. Khaled Alqahtani, with 30+ years of experience in statistical economics. Dr. Hend Aljobaily serves as Co-Founder & Chief Data Analytics & AI, bringing expertise from her role at NEOM.",
         link: { path: '/team', text: 'Meet Our Team' }
       },
-      ar: {
-        text: 'تأسست كيه بي أناليتكس على يد الدكتور كونراد بيزيندورفر، تنفيذي واقتصادي متميز عالمياً بخبرة تزيد عن 20 عاماً. قاد مكاتب الإحصاء الوطنية في النمسا والسعودية، وأشرف على فرق تضم أكثر من 1,100 موظف.',
+      ar: { 
+        text: "تأسست KPAnalytix على يد د. خالد القحطاني، الذي يتمتع بخبرة تزيد عن 30 عاماً في الاقتصاد الإحصائي. د. هند الجبيلي هي الشريك المؤسس ورئيس تحليلات البيانات والذكاء الاصطناعي.",
         link: { path: '/team', text: 'تعرف على فريقنا' }
       }
     }
   },
-
-  // Contact
   {
-    keywords: ['contact', 'reach', 'call', 'email', 'phone', 'get in touch', 'تواصل', 'اتصال', 'بريد', 'هاتف'],
+    keywords: ['khaled', 'alqahtani', 'خالد', 'القحطاني'],
     response: {
-      en: {
-        text: 'We\'d love to hear from you! You can reach us through our contact page where you can send a message directly to our team. We typically respond within 24-48 hours.',
+      en: { 
+        text: "Dr. Khaled Alqahtani is the Founder & CEO of KPAnalytix. He has 30+ years of experience in statistical economics, served as a lecturer at King Saud University, and advises ministry-level committees.",
+        link: { path: '/team', text: 'Read Full Bio' }
+      },
+      ar: { 
+        text: "د. خالد القحطاني هو المؤسس والرئيس التنفيذي لـ KPAnalytix. يتمتع بخبرة تزيد عن 30 عاماً في الاقتصاد الإحصائي، وعمل محاضراً في جامعة الملك سعود.",
+        link: { path: '/team', text: 'اقرأ السيرة الكاملة' }
+      }
+    }
+  },
+  {
+    keywords: ['hend', 'aljobaily', 'هند', 'الجبيلي'],
+    response: {
+      en: { 
+        text: "Dr. Hend Aljobaily is the Co-Founder & Chief Data Analytics & AI. She is a distinguished Chief Data Scientist at NEOM and Deputy Executive Director of Data & Statistics, with expertise in AI, Machine Learning, and Big Data.",
+        link: { path: '/team', text: 'Read Full Bio' }
+      },
+      ar: { 
+        text: "د. هند الجبيلي هي الشريك المؤسس ورئيس تحليلات البيانات والذكاء الاصطناعي. تشغل منصب كبير علماء البيانات في نيوم ونائب المدير التنفيذي للبيانات والإحصاء.",
+        link: { path: '/team', text: 'اقرأ السيرة الكاملة' }
+      }
+    }
+  },
+  {
+    keywords: ['contact', 'reach', 'email', 'phone', 'تواصل', 'اتصال', 'بريد'],
+    response: {
+      en: { 
+        text: "You can reach us at info@kpanalytix.com or visit our contact page to send us a message. We're based in Riyadh, Saudi Arabia.",
         link: { path: '/contact', text: 'Contact Us' }
       },
-      ar: {
-        text: 'نود أن نسمع منك! يمكنك التواصل معنا من خلال صفحة الاتصال حيث يمكنك إرسال رسالة مباشرة لفريقنا. نرد عادة خلال 24-48 ساعة.',
+      ar: { 
+        text: "يمكنك التواصل معنا عبر info@kpanalytix.com أو زيارة صفحة الاتصال لإرسال رسالة. مقرنا في الرياض، المملكة العربية السعودية.",
         link: { path: '/contact', text: 'تواصل معنا' }
       }
     }
   },
-
-  // Experience
   {
-    keywords: ['experience', 'portfolio', 'projects', 'work', 'clients', 'خبرة', 'مشاريع', 'أعمال', 'عملاء'],
+    keywords: ['location', 'address', 'where', 'riyadh', 'موقع', 'عنوان', 'أين', 'الرياض'],
     response: {
-      en: {
-        text: 'We have extensive experience in: Census operations, National accounts & GDP measurement, Tourism analytics, Dashboard development, AI solutions, Statistical office building, and International benchmarking. Our founder has led major projects including the KSA 2022 Census and Austria\'s first register-based census.',
-        link: { path: '/experience', text: 'View Our Experience' }
-      },
-      ar: {
-        text: 'لدينا خبرة واسعة في: عمليات التعداد، الحسابات القومية وقياس الناتج المحلي، تحليلات السياحة، تطوير لوحات المعلومات، حلول الذكاء الاصطناعي، بناء المكاتب الإحصائية، والمقارنة المعيارية الدولية.',
-        link: { path: '/experience', text: 'عرض خبراتنا' }
-      }
-    }
-  },
-
-  // About
-  {
-    keywords: ['about', 'company', 'kpanalytix', 'who are', 'عن', 'شركة', 'من نحن', 'كيه بي'],
-    response: {
-      en: {
-        text: 'KPAnalytix is a premier data analytics and AI solutions company based in Riyadh, Saudi Arabia. We combine deep expertise in data science, economic policy, and international benchmarking to deliver transformative insights for government institutions and businesses.',
-        link: { path: '/about', text: 'Learn More About Us' }
-      },
-      ar: {
-        text: 'كيه بي أناليتكس هي شركة رائدة في تحليل البيانات وحلول الذكاء الاصطناعي مقرها الرياض، المملكة العربية السعودية. نجمع بين الخبرة العميقة في علم البيانات والسياسات الاقتصادية والمقارنة المعيارية الدولية.',
-        link: { path: '/about', text: 'اعرف المزيد عنا' }
-      }
-    }
-  },
-
-  // Location
-  {
-    keywords: ['location', 'where', 'office', 'address', 'riyadh', 'saudi', 'موقع', 'أين', 'مكتب', 'عنوان', 'الرياض', 'سعودية'],
-    response: {
-      en: {
-        text: 'KPAnalytix is headquartered in Riyadh, Saudi Arabia. Our team serves clients across the Kingdom and internationally. Please visit our contact page for our full address and contact details.',
+      en: { 
+        text: "KPAnalytix is headquartered in Riyadh, Saudi Arabia. For detailed directions or to schedule a meeting, please contact us.",
         link: { path: '/contact', text: 'Get Directions' }
       },
-      ar: {
-        text: 'يقع مقر كيه بي أناليتكس في الرياض، المملكة العربية السعودية. يخدم فريقنا العملاء في جميع أنحاء المملكة ودولياً. يرجى زيارة صفحة الاتصال للحصول على العنوان الكامل.',
+      ar: { 
+        text: "يقع مقر KPAnalytix الرئيسي في الرياض، المملكة العربية السعودية. للحصول على الاتجاهات أو لتحديد موعد اجتماع، يرجى التواصل معنا.",
         link: { path: '/contact', text: 'احصل على الاتجاهات' }
       }
     }
   },
-
-  // Pricing / Cost
   {
-    keywords: ['price', 'cost', 'pricing', 'fee', 'quote', 'سعر', 'تكلفة', 'أسعار', 'عرض'],
+    keywords: ['about', 'company', 'عن', 'شركة', 'حول'],
     response: {
-      en: {
-        text: 'Our pricing is customized based on project scope and requirements. We\'d be happy to discuss your specific needs and provide a tailored proposal. Please reach out through our contact page to schedule a consultation.',
+      en: { 
+        text: "KPAnalytix is a premier data analytics and AI consulting firm based in Riyadh. We transform complex data into actionable insights for government and business clients.",
+        link: { path: '/about', text: 'Learn About Us' }
+      },
+      ar: { 
+        text: "KPAnalytix هي شركة رائدة في استشارات تحليل البيانات والذكاء الاصطناعي مقرها الرياض. نحول البيانات المعقدة إلى رؤى قابلة للتنفيذ.",
+        link: { path: '/about', text: 'تعرف علينا' }
+      }
+    }
+  },
+  {
+    keywords: ['experience', 'years', 'expertise', 'خبرة', 'سنوات'],
+    response: {
+      en: { 
+        text: "Our leadership brings 30+ years of combined experience in statistical economics, data science, and AI. We've worked with government entities, corporations, and research institutions.",
+        link: { path: '/experience', text: 'View Our Experience' }
+      },
+      ar: { 
+        text: "يجلب فريق قيادتنا خبرة مشتركة تزيد عن 30 عاماً في الاقتصاد الإحصائي وعلوم البيانات والذكاء الاصطناعي.",
+        link: { path: '/experience', text: 'عرض خبراتنا' }
+      }
+    }
+  },
+  {
+    keywords: ['price', 'cost', 'pricing', 'quote', 'سعر', 'تكلفة', 'عرض'],
+    response: {
+      en: { 
+        text: "Pricing varies based on project scope and requirements. Please contact us for a customized quote tailored to your needs.",
         link: { path: '/contact', text: 'Request a Quote' }
       },
-      ar: {
-        text: 'أسعارنا مخصصة بناءً على نطاق المشروع ومتطلباته. يسعدنا مناقشة احتياجاتك المحددة وتقديم عرض مخصص. يرجى التواصل من خلال صفحة الاتصال لتحديد موعد استشارة.',
-        link: { path: '/contact', text: 'طلب عرض سعر' }
+      ar: { 
+        text: "تختلف الأسعار حسب نطاق المشروع ومتطلباته. يرجى التواصل معنا للحصول على عرض سعر مخصص لاحتياجاتك.",
+        link: { path: '/contact', text: 'اطلب عرض سعر' }
       }
     }
   },
-
-  // AI / Machine Learning
   {
-    keywords: ['ai', 'artificial intelligence', 'machine learning', 'ml', 'deep learning', 'ذكاء اصطناعي', 'تعلم آلي', 'تعلم عميق'],
+    keywords: ['government', 'public', 'sector', 'حكومة', 'حكومي', 'قطاع عام'],
     response: {
-      en: {
-        text: 'We develop advanced AI and machine learning solutions including: Natural Language Processing, Classification models, Automated document processing, Predictive analytics, and Pattern recognition. Our AI models are tailored to your specific business needs.',
-        link: { path: '/services', text: 'Explore AI Solutions' }
+      en: { 
+        text: "We have extensive experience working with government entities on public sector analytics, policy evaluation, and evidence-based decision making.",
+        link: { path: '/experience', text: 'Government Experience' }
       },
-      ar: {
-        text: 'نطور حلول الذكاء الاصطناعي والتعلم الآلي المتقدمة بما في ذلك: معالجة اللغة الطبيعية، نماذج التصنيف، معالجة المستندات الآلية، التحليلات التنبؤية، والتعرف على الأنماط.',
-        link: { path: '/services', text: 'استكشف حلول الذكاء الاصطناعي' }
+      ar: { 
+        text: "لدينا خبرة واسعة في العمل مع الجهات الحكومية في تحليلات القطاع العام وتقييم السياسات واتخاذ القرارات المبنية على الأدلة.",
+        link: { path: '/experience', text: 'الخبرة الحكومية' }
       }
     }
   },
-
-  // Dashboard
   {
-    keywords: ['dashboard', 'visualization', 'chart', 'report', 'tableau', 'لوحة', 'تصور', 'رسم بياني', 'تقرير'],
+    keywords: ['crn', 'trn', 'registration', 'license', 'سجل', 'تجاري', 'ضريبي'],
     response: {
-      en: {
-        text: 'We create interactive dashboards and data visualizations that transform complex data into clear, actionable insights. Our solutions include macroeconomic dashboards, KPI monitoring systems, and executive performance trackers with real-time updates.',
-        link: { path: '/services', text: 'View Dashboard Services' }
+      en: { 
+        text: "KPAnalytix is a registered company in Saudi Arabia. CRN: 1010900500, TRN: 311458122400003.",
+        link: { path: '/contact', text: 'Contact Us' }
       },
-      ar: {
-        text: 'نصمم لوحات معلومات تفاعلية وتصورات بيانات تحول البيانات المعقدة إلى رؤى واضحة وقابلة للتنفيذ. تشمل حلولنا لوحات الاقتصاد الكلي وأنظمة مراقبة مؤشرات الأداء.',
-        link: { path: '/services', text: 'عرض خدمات لوحات المعلومات' }
+      ar: { 
+        text: "KPAnalytix شركة مسجلة في المملكة العربية السعودية. رقم السجل التجاري: 1010900500، الرقم الضريبي: 311458122400003.",
+        link: { path: '/contact', text: 'تواصل معنا' }
       }
     }
   },
-
-  // Greeting
   {
-    keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'مرحبا', 'أهلا', 'السلام', 'صباح', 'مساء'],
+    keywords: ['thank', 'thanks', 'شكر', 'شكرا'],
     response: {
-      en: {
-        text: 'Hello! Welcome to KPAnalytix. I\'m here to help you learn about our data analytics and AI solutions. Feel free to ask about our services, team, experience, or how to get in touch with us.',
-        link: null
-      },
-      ar: {
-        text: 'مرحباً! أهلاً بك في كيه بي أناليتكس. أنا هنا لمساعدتك في التعرف على حلول تحليل البيانات والذكاء الاصطناعي لدينا. لا تتردد في السؤال عن خدماتنا أو فريقنا أو خبراتنا.',
-        link: null
-      }
-    }
-  },
-
-  // Thank you
-  {
-    keywords: ['thank', 'thanks', 'شكر', 'شكراً'],
-    response: {
-      en: {
-        text: 'You\'re welcome! If you have any more questions, feel free to ask. We\'re here to help!',
-        link: null
-      },
-      ar: {
-        text: 'عفواً! إذا كان لديك أي أسئلة أخرى، لا تتردد في السؤال. نحن هنا للمساعدة!',
-        link: null
-      }
+      en: { text: "You're welcome! Is there anything else I can help you with?" },
+      ar: { text: "على الرحب والسعة! هل هناك أي شيء آخر يمكنني مساعدتك به؟" }
     }
   }
 ]

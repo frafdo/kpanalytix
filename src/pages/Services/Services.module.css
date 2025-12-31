@@ -1,6 +1,6 @@
 /**
  * @file Services.module.css
- * @description Full-page services with smooth slide transitions
+ * @description Full-page services with video background and smooth slide transitions
  */
 
 /* Wrapper ensures footer can appear below */
@@ -9,11 +9,65 @@
   position: relative;
 }
 
+/* Video Background - persistent across slides */
+.videoContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.videoBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Translucent overlay - darker for readability */
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 2, 20, 0.88) 0%,
+    rgba(15, 5, 60, 0.82) 30%,
+    rgba(30, 15, 70, 0.78) 70%,
+    rgba(8, 8, 20, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+/* Bottom fade - darker */
+.videoFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 26, 1) 0%,
+    rgba(10, 10, 26, 0.98) 15%,
+    rgba(10, 10, 26, 0.9) 30%,
+    rgba(10, 10, 26, 0.7) 50%,
+    rgba(10, 10, 26, 0.4) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
 /* Main container - fixed viewport for slides */
 .services {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  z-index: 1;
 }
 
 /* Shared section styles */
@@ -35,7 +89,6 @@
 .hero {
   text-align: center;
   padding: var(--spacing-20) var(--spacing-6);
-  background: linear-gradient(180deg, rgba(40, 30, 80, 0.3) 0%, transparent 100%);
 }
 
 .heroContent {
@@ -114,47 +167,7 @@
 /* Service Section */
 .serviceSection {
   justify-content: flex-end;
-  align-items: stretch;
-}
-
-/* Background Image */
-.imageContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-}
-
-.imagePlaceholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(80, 70, 130, 0.3) 0%,
-    rgba(60, 50, 100, 0.4) 50%,
-    rgba(50, 40, 90, 0.5) 100%
-  );
-}
-
-.imagePlaceholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Gradient fade for text readability */
-.imageFade {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background: 
-    linear-gradient(to top, rgba(10, 10, 26, 1) 0%, rgba(10, 10, 26, 0.95) 20%, rgba(10, 10, 26, 0.5) 40%, transparent 60%),
-    linear-gradient(to right, rgba(10, 10, 26, 0.5) 0%, transparent 40%);
+  align-items: flex-start;
 }
 
 /* Content */
@@ -170,6 +183,7 @@
 
 .serviceInfo {
   max-width: 800px;
+  text-align: left;
 }
 
 .serviceTitle {
@@ -376,7 +390,10 @@
   }
 }
 
-/* RTL Support */
+/* ========================================
+   RTL SUPPORT
+   ======================================== */
+
 [dir="rtl"] .sideNav {
   right: auto;
   left: var(--spacing-6);
@@ -392,11 +409,17 @@
 }
 
 [dir="rtl"] .sectionContent {
-  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-[dir="rtl"] .imageFade {
-  background: 
-    linear-gradient(to top, rgba(10, 10, 26, 1) 0%, rgba(10, 10, 26, 0.95) 20%, rgba(10, 10, 26, 0.5) 40%, transparent 60%),
-    linear-gradient(to left, rgba(10, 10, 26, 0.5) 0%, transparent 40%);
+[dir="rtl"] .serviceSection {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .serviceFeatures {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .heroContent {
+  text-align: center;
 }

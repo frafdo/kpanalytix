@@ -1,6 +1,6 @@
 /**
  * @file Navigation.jsx
- * @description Full-screen navigation overlay - no numbers
+ * @description Full-screen navigation overlay with close button
  */
 
 import { NavLink } from 'react-router-dom'
@@ -28,6 +28,21 @@ function Navigation({ onClose }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
+      {/* Close Button */}
+      <motion.button
+        className={styles.closeButton}
+        onClick={onClose}
+        initial={{ opacity: 0, rotate: -90 }}
+        animate={{ opacity: 1, rotate: 0 }}
+        transition={{ delay: 0.2, duration: 0.3 }}
+        aria-label="Close navigation"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <path d="M18 6L6 18" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </motion.button>
+
       <div className={styles.container}>
         <ul className={styles.navList}>
           {navItems.map((item, index) => (

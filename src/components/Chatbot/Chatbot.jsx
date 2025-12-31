@@ -1,6 +1,6 @@
 /**
  * @file Chatbot.jsx
- * @description Spinning orb chatbot
+ * @description AI Chatbot - uses GPT-4o-mini if API key available, otherwise falls back to FAQ
  */
 
 import { useState, useRef, useEffect } from 'react'
@@ -10,25 +10,56 @@ import { useNavigate } from 'react-router-dom'
 import { chatbotResponses } from '../../data/chatbotData'
 import styles from './Chatbot.module.css'
 
+// System prompt for GPT
+const SYSTEM_PROMPT = `You are KPAnalytix's AI assistant. You ONLY answer questions about KPAnalytix and its services. If asked about anything unrelated, politely redirect to company services.
+
+About KPAnalytix: Premier data analytics and AI consulting firm in Riyadh, Saudi Arabia.
+CRN: 1010900500, TRN: 311458122400003
+
+Leadership:
+- Dr. Khaled Alqahtani - Founder & CEO, 30+ years experience, former King Saud University lecturer
+- Dr. Hend Aljobaily - Co-Founder & Chief Data Analytics & AI, Chief Data Scientist at NEOM
+
+Services: Predictive Analytics, Forecasting, Dashboards, Data Governance, AI Models, Statistical Consulting, KPI Measurement, Policy Design, Impact Assessment, International Economics, Best Practices, Benchmarking
+
+Contact: info@kpanalytix.com, Riyadh, Saudi Arabia
+
+Guidelines:
+- Be helpful, professional, concise
+- Answer in user's language (Arabic or English)
+- For pricing, suggest contacting the team
+- Redirect off-topic questions to company services`
+
 function Chatbot() {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef(null)
+  const conversationRef = useRef([])
 
+  // Check if API key is available
+  const apiKey = import.meta.env.VITE_OPENAI_API_KEY
+  const hasApiKey = apiKey && apiKey !== 'your_openai_api_key_here' && apiKey.startsWith('sk-')
+
+  // Initialize with greeting
   useEffect(() => {
     if (isOpen && messages.length === 0) {
-      setMessages([{ type: 'bot', text: t('chatbot.greeting') }])
+      const greeting = i18n.language === 'ar' 
+        ? 'مرحباً! أنا مساعد KPAnalytix. كيف يمكنني مساعدتك اليوم؟'
+        : "Hello! I'm KPAnalytix's assistant. How can I help you today?"
+      setMessages([{ type: 'bot', text: greeting }])
     }
-  }, [isOpen, t])
+  }, [isOpen, i18n.language])
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  const findResponse = (query) => {
+  // FAQ-based response (fallback)
+  const findFaqResponse = (query) => {
     const lang = i18n.language
     const lowerQuery = query.toLowerCase()
     
@@ -46,25 +77,90 @@ function Chatbot() {
     
     return {
       text: lang === 'ar' 
-        ? 'عذراً، لم أفهم سؤالك. يمكنك التواصل معنا مباشرة.'
+        ? 'عذراً، لم أفهم سؤالك. يمكنك التواصل معنا مباشرة للمزيد من المعلومات.'
         : "I'm not sure about that. Feel free to contact us directly for more information.",
       action: { type: 'link', path: '/contact' }
     }
   }
 
-  const handleSend = () => {
-    if (!input.trim()) return
+  // GPT-based response
+  const sendToGPT = async (userMessage) => {
+    conversationRef.current.push({ role: 'user', content: userMessage })
 
-    const userMessage = { type: 'user', text: input }
-    setMessages(prev => [...prev, userMessage])
-    
-    const response = findResponse(input)
-    
-    setTimeout(() => {
-      setMessages(prev => [...prev, { type: 'bot', text: response.text, action: response.action }])
-    }, 500)
-    
+    try {
+      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            ...conversationRef.current
+          ],
+          max_tokens: 500,
+          temperature: 0.7
+        })
+      })
+
+      if (!response.ok) throw new Error('API request failed')
+
+      const data = await response.json()
+      const assistantMessage = data.choices[0].message.content
+
+      conversationRef.current.push({ role: 'assistant', content: assistantMessage })
+
+      if (conversationRef.current.length > 20) {
+        conversationRef.current = conversationRef.current.slice(-20)
+      }
+
+      return { text: assistantMessage, action: null }
+    } catch (error) {
+      console.error('Chat error:', error)
+      // Fallback to FAQ on error
+      return findFaqResponse(userMessage)
+    }
+  }
+
+  const handleSend = async () => {
+    if (!input.trim() || isLoading) return
+
+    const userText = input
+    setMessages(prev => [...prev, { type: 'user', text: userText }])
     setInput('')
+
+    if (hasApiKey) {
+      setIsLoading(true)
+      const response = await sendToGPT(userText)
+      setMessages(prev => [...prev, { type: 'bot', text: response.text, action: response.action }])
+      setIsLoading(false)
+    } else {
+      // Use FAQ fallback
+      setTimeout(() => {
+        const response = findFaqResponse(userText)
+        setMessages(prev => [...prev, { type: 'bot', text: response.text, action: response.action }])
+      }, 500)
+    }
+  }
+
+  const handleSuggestionClick = async (suggestion) => {
+    if (isLoading) return
+    
+    setMessages(prev => [...prev, { type: 'user', text: suggestion }])
+
+    if (hasApiKey) {
+      setIsLoading(true)
+      const response = await sendToGPT(suggestion)
+      setMessages(prev => [...prev, { type: 'bot', text: response.text, action: response.action }])
+      setIsLoading(false)
+    } else {
+      setTimeout(() => {
+        const response = findFaqResponse(suggestion)
+        setMessages(prev => [...prev, { type: 'bot', text: response.text, action: response.action }])
+      }, 500)
+    }
   }
 
   const handleAction = (action) => {
@@ -74,7 +170,9 @@ function Chatbot() {
     }
   }
 
-  const suggestions = t('chatbot.suggestions', { returnObjects: true })
+  const suggestions = i18n.language === 'ar' 
+    ? ['ما هي خدماتكم؟', 'من هو فريق القيادة؟', 'كيف أتواصل معكم؟']
+    : ['What services do you offer?', 'Who is on your team?', 'How can I contact you?']
 
   return (
     <>
@@ -112,8 +210,10 @@ function Chatbot() {
                   </svg>
                 </div>
                 <div>
-                  <h3>{t('chatbot.title')}</h3>
-                  <span className={styles.statusOnline}>Online</span>
+                  <h3>KPAnalytix {hasApiKey ? 'AI' : 'Assistant'}</h3>
+                  <span className={styles.statusOnline}>
+                    {isLoading ? (i18n.language === 'ar' ? 'يكتب...' : 'Typing...') : 'Online'}
+                  </span>
                 </div>
               </div>
               <button className={styles.closeBtn} onClick={() => setIsOpen(false)} aria-label="Close chat">
@@ -147,29 +247,46 @@ function Chatbot() {
                         className={styles.actionBtn}
                         onClick={() => handleAction(msg.action)}
                       >
-                        Learn more →
+                        {i18n.language === 'ar' ? 'اعرف المزيد ←' : 'Learn more →'}
                       </button>
                     )}
                   </div>
                 </motion.div>
               ))}
+              
+              {/* Loading indicator */}
+              {isLoading && (
+                <motion.div
+                  className={`${styles.message} ${styles.bot}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                >
+                  <div className={styles.botIcon}>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    </svg>
+                  </div>
+                  <div className={styles.messageContent}>
+                    <div className={styles.typingIndicator}>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+              
               <div ref={messagesEndRef} />
             </div>
 
             {/* Suggestions */}
-            {messages.length <= 1 && (
+            {messages.length <= 1 && !isLoading && (
               <div className={styles.suggestions}>
                 {suggestions.map((suggestion, index) => (
                   <button
                     key={index}
                     className={styles.suggestionBtn}
-                    onClick={() => {
-                      setMessages(prev => [...prev, { type: 'user', text: suggestion }])
-                      const response = findResponse(suggestion)
-                      setTimeout(() => {
-                        setMessages(prev => [...prev, { type: 'bot', text: response.text, action: response.action }])
-                      }, 500)
-                    }}
+                    onClick={() => handleSuggestionClick(suggestion)}
                   >
                     {suggestion}
                   </button>
@@ -184,15 +301,28 @@ function Chatbot() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                placeholder={t('chatbot.placeholder')}
+                placeholder={i18n.language === 'ar' ? 'اكتب رسالتك...' : 'Type your message...'}
                 className={styles.input}
+                disabled={isLoading}
               />
-              <button className={styles.sendBtn} onClick={handleSend} aria-label="Send message">
+              <button 
+                className={styles.sendBtn} 
+                onClick={handleSend} 
+                aria-label="Send message"
+                disabled={isLoading}
+              >
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                 </svg>
               </button>
             </div>
+
+            {/* Powered by notice */}
+            {hasApiKey && (
+              <div className={styles.poweredBy}>
+                Powered by GPT-4o-mini
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
