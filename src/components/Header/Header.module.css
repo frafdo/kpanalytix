@@ -44,7 +44,8 @@
 .logoImg {
   height: 32px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) !important;
+  -webkit-filter: brightness(0) invert(1) !important;
   transition: all var(--transition-normal);
 }
 
@@ -148,6 +149,8 @@
 
   .logoImg {
     height: 24px;
+    filter: brightness(0) invert(1) !important;
+    -webkit-filter: brightness(0) invert(1) !important;
   }
 
   .globeBtn {
