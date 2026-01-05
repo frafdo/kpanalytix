@@ -35,7 +35,7 @@ function Button({
   const content = (
     <>
       {icon && iconPosition === 'left' && <span className={styles.icon}>{icon}</span>}
-      <span className={styles.text}>{children}</span>
+      <span className={styles.buttonText}>{children}</span>
       {icon && iconPosition === 'right' && <span className={styles.icon}>{icon}</span>}
     </>
   )

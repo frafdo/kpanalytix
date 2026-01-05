@@ -37,18 +37,6 @@ function Footer() {
             {/* About Column */}
             <div className={styles.column}>
               <p className={styles.tagline}>{t('footer.tagline')}</p>
-              
-              {/* Registration Info */}
-              <div className={styles.registration}>
-                <div className={styles.regItem}>
-                  <span className={styles.regLabel}>CRN</span>
-                  <span className={styles.regValue}>[CRN Number]</span>
-                </div>
-                <div className={styles.regItem}>
-                  <span className={styles.regLabel}>TRN</span>
-                  <span className={styles.regValue}>[TRN Number]</span>
-                </div>
-              </div>
             </div>
 
             {/* Quick Links */}
@@ -82,6 +70,22 @@ function Footer() {
                 </a>
                 <span>{t('contact.info.addressValue')}</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Registration Info - Separate for mobile positioning */}
+      <div className={styles.registrationSection}>
+        <div className="container">
+          <div className={styles.registration}>
+            <div className={styles.regItem}>
+              <span className={styles.regLabel}>CRN</span>
+              <span className={styles.regValue}>[CRN Number]</span>
+            </div>
+            <div className={styles.regItem}>
+              <span className={styles.regLabel}>TRN</span>
+              <span className={styles.regValue}>[TRN Number]</span>
             </div>
           </div>
         </div>

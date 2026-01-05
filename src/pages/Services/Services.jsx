@@ -158,6 +158,11 @@ function Services() {
       pauseAutoPlay()
     }
 
+    const handleTouchMove = (e) => {
+      // Prevent default scroll behavior on mobile
+      e.preventDefault()
+    }
+
     const handleTouchEnd = (e) => {
       const now = Date.now()
       if (now - lastScrollTime.current < scrollCooldown || isAnimating) return
@@ -176,12 +181,14 @@ function Services() {
     const container = containerRef.current
     if (container) {
       container.addEventListener('touchstart', handleTouchStart, { passive: true })
+      container.addEventListener('touchmove', handleTouchMove, { passive: false })
       container.addEventListener('touchend', handleTouchEnd, { passive: true })
     }
 
     return () => {
       if (container) {
         container.removeEventListener('touchstart', handleTouchStart)
+        container.removeEventListener('touchmove', handleTouchMove)
         container.removeEventListener('touchend', handleTouchEnd)
       }
     }

@@ -67,24 +67,24 @@ export const chatbotResponses = [
     keywords: ['team', 'founder', 'ceo', 'who', 'فريق', 'مؤسس', 'من'],
     response: {
       en: { 
-        text: "KPAnalytix was founded by Dr. Khaled Alqahtani, with 30+ years of experience in statistical economics. Dr. Hend Aljobaily serves as Co-Founder & Chief Data Analytics & AI, bringing expertise from her role at NEOM.",
+        text: "KPAnalytix was co-founded by Dr. Konrad Pesendorfer (CEO) with 30+ years in statistical economics, and Dr. Hend Aljobaily (Chief Data Analytics & AI) who brings expertise in AI, forecasting models, and medical research analytics.",
         link: { path: '/team', text: 'Meet Our Team' }
       },
       ar: { 
-        text: "تأسست KPAnalytix على يد د. خالد القحطاني، الذي يتمتع بخبرة تزيد عن 30 عاماً في الاقتصاد الإحصائي. د. هند الجبيلي هي الشريك المؤسس ورئيس تحليلات البيانات والذكاء الاصطناعي.",
+        text: "تأسست KPAnalytix على يد د. كونراد بيزيندورفر (الرئيس التنفيذي) بخبرة 30+ عاماً في الاقتصاد الإحصائي، ود. هند الجبيلي (رئيس تحليلات البيانات والذكاء الاصطناعي) ذات الخبرة في الذكاء الاصطناعي ونماذج التنبؤ وتحليلات البحث الطبي.",
         link: { path: '/team', text: 'تعرف على فريقنا' }
       }
     }
   },
   {
-    keywords: ['khaled', 'alqahtani', 'خالد', 'القحطاني'],
+    keywords: ['konrad', 'pesendorfer', 'كونراد', 'بيزيندورفر'],
     response: {
       en: { 
-        text: "Dr. Khaled Alqahtani is the Founder & CEO of KPAnalytix. He has 30+ years of experience in statistical economics, served as a lecturer at King Saud University, and advises ministry-level committees.",
+        text: "Dr. Konrad Pesendorfer is the Founder & CEO of KPAnalytix. He has 30+ years of experience in statistical economics, led Statistics Austria and GASTAT Saudi Arabia, and designed the KSA 2022 Census Project.",
         link: { path: '/team', text: 'Read Full Bio' }
       },
       ar: { 
-        text: "د. خالد القحطاني هو المؤسس والرئيس التنفيذي لـ KPAnalytix. يتمتع بخبرة تزيد عن 30 عاماً في الاقتصاد الإحصائي، وعمل محاضراً في جامعة الملك سعود.",
+        text: "د. كونراد بيزيندورفر هو المؤسس والرئيس التنفيذي لـ KPAnalytix. يتمتع بخبرة تزيد عن 30 عاماً في الاقتصاد الإحصائي، وقاد هيئة الإحصاء النمساوية والهيئة العامة للإحصاء السعودية.",
         link: { path: '/team', text: 'اقرأ السيرة الكاملة' }
       }
     }
@@ -93,11 +93,11 @@ export const chatbotResponses = [
     keywords: ['hend', 'aljobaily', 'هند', 'الجبيلي'],
     response: {
       en: { 
-        text: "Dr. Hend Aljobaily is the Co-Founder & Chief Data Analytics & AI. She is a distinguished Chief Data Scientist at NEOM and Deputy Executive Director of Data & Statistics, with expertise in AI, Machine Learning, and Big Data.",
+        text: "Dr. Hend Aljobaily is the Co-Founder & Chief Data Analytics & AI. She is a distinguished Chief Data Scientist with expertise in AI, Machine Learning, Big Data, and has built forecasting models for population, tourism, and finance, as well as medical research analytics.",
         link: { path: '/team', text: 'Read Full Bio' }
       },
       ar: { 
-        text: "د. هند الجبيلي هي الشريك المؤسس ورئيس تحليلات البيانات والذكاء الاصطناعي. تشغل منصب كبير علماء البيانات في نيوم ونائب المدير التنفيذي للبيانات والإحصاء.",
+        text: "د. هند الجبيلي هي الشريك المؤسس ورئيس تحليلات البيانات والذكاء الاصطناعي. عالمة بيانات رئيسية متميزة ذات خبرة في الذكاء الاصطناعي والتعلم الآلي، وبنت نماذج تنبؤ للسكان والسياحة والمالية وتحليلات البحث الطبي.",
         link: { path: '/team', text: 'اقرأ السيرة الكاملة' }
       }
     }

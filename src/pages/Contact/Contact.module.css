@@ -249,19 +249,22 @@
 .submitBtn {
   width: 100%;
   padding: var(--spacing-4) var(--spacing-6);
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
   border: none;
   border-radius: var(--border-radius-lg);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+  color: #ffffff;
   cursor: pointer;
   transition: all var(--transition-normal);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  letter-spacing: 0.02em;
 }
 
 .submitBtn:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-sm);
+  box-shadow: 0 6px 25px rgba(124, 58, 237, 0.5);
+  background: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
 }
 
 .submitBtn:disabled {
@@ -291,5 +294,19 @@
 
   .contactInfo {
     order: -1;
+  }
+
+  /* CRN/TRN centered at bottom on mobile */
+  .registrationInfo {
+    order: 10;
+    margin-top: var(--spacing-6);
+    padding-top: var(--spacing-6);
+    text-align: center;
+  }
+
+  .regItem {
+    flex-direction: column;
+    gap: var(--spacing-1);
+    text-align: center;
   }
 }

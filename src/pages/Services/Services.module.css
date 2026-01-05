@@ -365,28 +365,48 @@
 
   .sectionContent {
     padding: var(--spacing-6) var(--spacing-4);
-    min-height: 45vh;
+    padding-bottom: var(--spacing-16);
+    min-height: auto;
   }
 
   .serviceTitle {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    font-size: clamp(1.5rem, 7vw, 2rem);
   }
 
   .serviceDescription {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
   }
 
   .featureTag {
-    font-size: var(--font-size-sm);
-    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-2);
   }
 
   .scrollIndicator {
     display: none;
   }
 
+  /* Hide nav arrows on mobile */
   .navArrows {
-    bottom: var(--spacing-4);
+    display: none;
+  }
+
+  /* Fix mobile scroll - use relative positioning */
+  .servicesWrapper {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services {
+    height: 100vh;
+    height: 100dvh;
+    touch-action: pan-y;
+    overscroll-behavior-y: contain;
+  }
+
+  .videoContainer {
+    position: absolute;
   }
 }
 
