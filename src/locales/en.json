@@ -257,11 +257,7 @@
       "address": "Address",
       "addressValue": "[Address Line 1]\n[Address Line 2]\nRiyadh, Saudi Arabia",
       "email": "Email",
-<<<<<<< HEAD
       "emailValue": "office@kpanalytix.com",
-=======
-      "emailValue": "[office@kpanalytix.com]",
->>>>>>> eec0f02cabecb6fcb2b629dd1f4e4009e808d0d5
       "phone": "Phone",
       "phoneValue": "[+966 XX XXX XXXX]",
       "crn": "Commercial Registration",
