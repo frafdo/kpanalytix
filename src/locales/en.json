@@ -257,7 +257,7 @@
       "address": "Address",
       "addressValue": "[Address Line 1]\n[Address Line 2]\nRiyadh, Saudi Arabia",
       "email": "Email",
-      "emailValue": "[email@kpanalytix.com]",
+      "emailValue": "office@kpanalytix.com",
       "phone": "Phone",
       "phoneValue": "[+966 XX XXX XXXX]",
       "crn": "Commercial Registration",
@@ -335,7 +335,7 @@
     },
     "contact": {
       "title": "Contact Us",
-      "text": "If you have questions about this Privacy Policy or our privacy practices, please contact us at privacy@kpanalytix.com"
+      "text": "If you have questions about this Privacy Policy or our privacy practices, please contact us at office@kpanalytix.com"
     }
   },
   "terms": {
@@ -375,7 +375,7 @@
     },
     "contact": {
       "title": "Contact Information",
-      "text": "For any questions regarding these Terms and Conditions, please contact us at legal@kpanalytix.com"
+      "text": "For any questions regarding these Terms and Conditions, please contact us at office@kpanalytix.com"
     }
   }
 }

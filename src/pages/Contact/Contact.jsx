@@ -148,7 +148,7 @@ function Contact() {
                 </div>
                 <div>
                   <h4>{t('contact.info.email')}</h4>
-                  <a href="mailto:email@kpanalytix.com">[email@kpanalytix.com]</a>
+                  <a href="mailto:office@kpanalytix.com">office@kpanalytix.com</a>
                 </div>
               </div>
 
