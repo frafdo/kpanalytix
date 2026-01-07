@@ -22,6 +22,7 @@
     "projectsDelivered": "Projects Delivered",
     "countriesServed": "Countries Served",
     "teamExperts": "Expert Team Members",
+    "employeesLed": "Employees Led",
     "readMore": "Learn More About Us"
   },
   "aboutPage": {
@@ -32,7 +33,7 @@
     "visionTitle": "Our Vision",
     "visionText": "To become the leading data intelligence partner in the region, setting the benchmark for data-driven governance and business excellence.",
     "historyTitle": "Our Story",
-    "historyText1": "KPAnalytix was co-founded by Dr. Konrad Pesendorfer and Dr. Hend Aljobaily, bringing together decades of leadership experience in official statistics, economic policy, data analytics, and AI innovation.",
+    "historyText1": "KPAnalytix was co-founded by CEO Dr. Konrad Pesendorfer and Chief Data Officer Dr. Hend Aljobaily, bringing together decades of leadership experience in official statistics, economic policy, data analytics, and AI innovation.",
     "historyText2": "With proven track records leading national statistical offices, building AI solutions, developing forecasting models across multiple domains, and driving transformative data initiatives, our founders bring unparalleled expertise to every engagement.",
     "historyText3": "Our company combines deep experience of KSA's policy priorities and institutional setup with international expertise in economic policy making, cutting-edge AI capabilities, and advanced data analytics.",
     "valuesTitle": "Our Values",
@@ -172,21 +173,21 @@
     "heroTitle": "Decades of Excellence",
     "heroSubtitle": "Transformative impact across statistics, economics, and data science",
     "statsTitle": "By The Numbers",
-    "statYears": "30+",
-    "statYearsLabel": "Years Experience",
-    "statCountries": "10+",
+    "statYears": "25+",
+    "statYearsLabel": "Years of Executive Leadership Experience",
+    "statCountries": "3",
     "statCountriesLabel": "Countries Served",
-    "statTeams": "1,900+",
-    "statTeamsLabel": "Team Members Led",
+    "statTeams": "1,100+",
+    "statTeamsLabel": "Employees Led in Different Institutions",
     "statProjects": "100+",
     "statProjectsLabel": "Major Projects",
     "highlightsTitle": "Key Achievements",
-    "highlight1Title": "National Statistical Leadership",
+    "highlight1Title": "Official Statistics Leadership",
     "highlight1Text": "Led and transformed two National Statistical Offices - Statistics Austria (800+ FTEs) and General Authority for Statistics Saudi Arabia (1,100+ FTEs)",
     "highlight2Title": "Census Excellence",
     "highlight2Text": "Designed and led the first Register-based Census in Austria (2011) and the KSA 2022 Census Project",
     "highlight3Title": "Data Function Development",
-    "highlight3Text": "Built comprehensive Economics Data & Statistics Functions, including forecasting models for population, macroeconomics, tourism, and finance",
+    "highlight3Text": "Built comprehensive Economics Data & Statistics Functions in NEOM, including forecasting models for population, macroeconomics, tourism, and finance",
     "highlight4Title": "AI & Advanced Analytics",
     "highlight4Text": "Developed AI solutions, medical research analytics, and predictive modeling frameworks driving evidence-based decision-making at national scale"
   },
@@ -202,7 +203,7 @@
     },
     "cofounder": {
       "name": "Dr. Hend Aljobaily",
-      "role": "Co-Founder & Chief Data Analytics & AI",
+      "role": "Co-Founder & Chief Data Officer",
       "bio": "Distinguished Chief Data Scientist and innovation leader with expertise in AI-driven decision-making, advanced analytics, and data-driven transformation at national scale."
     }
   },
@@ -221,7 +222,7 @@
     "education": "Education",
     "educationText": "Ph.D. in Economics from the University of Economics and Business Administration in Vienna",
     "experience": "Experience",
-    "experienceText": "Fluent in English, French, and German. 30+ years in statistical leadership.",
+    "experienceText": "Fluent in English, French, and German. 20+ years in statistical leadership.",
     "residency": "Based in Saudi Arabia since 2020, holder of premium residency visa",
     "cofounderFullBio": "Dr. Hend Aljobaily is a distinguished Chief Data Scientist and innovation leader, playing a pivotal role in shaping the future of data, statistics, and AI-driven decision-making at national scale. She brings a rare blend of scientific rigor, strategic leadership, and execution excellence. In her dual leadership journey—as Chief Data Scientist and Deputy Executive Director of Data & Statistics—Dr. Aljobaily drives the design and adoption of advanced analytics, machine learning, and statistical frameworks that enable evidence-based policymaking and transformative insights across complex, data-intensive domains.",
     "cofounderAchievements": "Key Achievements",
@@ -232,7 +233,7 @@
     "cofounderAchievement5": "Director of Innovation Lab at General Authority For Statistics",
     "cofounderAchievement6": "Strategy Analytics Section Head at Saudi Tourism Authority",
     "cofounderEducation": "Education",
-    "cofounderEducationText": "Ph.D.",
+    "cofounderEducationText": "Ph.D. in Applied Statistics and Research Methods from University of Northern Colorado",
     "cofounderExpertise": "Expertise",
     "cofounderExpertiseText": "AI, Machine Learning, Big Data, Predictive Modeling, Statistical Consulting"
   },
@@ -255,7 +256,7 @@
     "info": {
       "title": "Get In Touch",
       "address": "Address",
-      "addressValue": "[Address Line 1]\n[Address Line 2]\nRiyadh, Saudi Arabia",
+      "addressValue": "7546 Qurtubah\nUnit No 1110\nRiyadh 13244 – 2284\nSaudi Arabia",
       "email": "Email",
       "emailValue": "office@kpanalytix.com",
       "phone": "Phone",
@@ -274,6 +275,23 @@
     "copyright": "© 2025 KPAnalytix. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "errors": {
+    "notFound": {
+      "title": "Page Not Found",
+      "description": "Sorry, the page you're looking for doesn't exist or has been moved.",
+      "homeButton": "Back to Home",
+      "contactButton": "Contact Us",
+      "helpfulLinks": "Helpful Links"
+    },
+    "general": {
+      "title": "Something Went Wrong",
+      "description": "We're sorry, but something unexpected happened. Please try again.",
+      "refreshButton": "Refresh Page",
+      "homeButton": "Go to Home",
+      "persistsMessage": "If the problem persists,",
+      "contactSupport": "contact our support team"
+    }
   },
   "chatbot": {
     "title": "KPA Assistant",

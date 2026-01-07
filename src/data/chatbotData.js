@@ -67,11 +67,11 @@ export const chatbotResponses = [
     keywords: ['team', 'founder', 'ceo', 'who', 'فريق', 'مؤسس', 'من'],
     response: {
       en: { 
-        text: "KPAnalytix was co-founded by Dr. Konrad Pesendorfer (CEO) with 30+ years in statistical economics, and Dr. Hend Aljobaily (Chief Data Analytics & AI) who brings expertise in AI, forecasting models, and medical research analytics.",
+        text: "KPAnalytix was co-founded by Dr. Konrad Pesendorfer (CEO) with 25+ years in executive leadership, and Dr. Hend Aljobaily (Chief Data Officer) who brings expertise in AI, forecasting models, and medical research analytics.",
         link: { path: '/team', text: 'Meet Our Team' }
       },
       ar: { 
-        text: "تأسست KPAnalytix على يد د. كونراد بيزيندورفر (الرئيس التنفيذي) بخبرة 30+ عاماً في الاقتصاد الإحصائي، ود. هند الجبيلي (رئيس تحليلات البيانات والذكاء الاصطناعي) ذات الخبرة في الذكاء الاصطناعي ونماذج التنبؤ وتحليلات البحث الطبي.",
+        text: "تأسست KPAnalytix على يد د. كونراد بيزيندورفر (الرئيس التنفيذي) بخبرة 25+ عاماً في القيادة التنفيذية، ود. هند الجبيلي (الرئيسة التنفيذية للبيانات) ذات الخبرة في الذكاء الاصطناعي ونماذج التنبؤ وتحليلات البحث الطبي.",
         link: { path: '/team', text: 'تعرف على فريقنا' }
       }
     }
@@ -80,7 +80,7 @@ export const chatbotResponses = [
     keywords: ['konrad', 'pesendorfer', 'كونراد', 'بيزيندورفر'],
     response: {
       en: { 
-        text: "Dr. Konrad Pesendorfer is the Founder & CEO of KPAnalytix. He has 30+ years of experience in statistical economics, led Statistics Austria and GASTAT Saudi Arabia, and designed the KSA 2022 Census Project.",
+        text: "Dr. Konrad Pesendorfer is the Founder & CEO of KPAnalytix. He has 25+ years of executive leadership experience, led Statistics Austria and GASTAT Saudi Arabia, and designed the KSA 2022 Census Project.",
         link: { path: '/team', text: 'Read Full Bio' }
       },
       ar: { 
@@ -106,11 +106,11 @@ export const chatbotResponses = [
     keywords: ['contact', 'reach', 'email', 'phone', 'تواصل', 'اتصال', 'بريد'],
     response: {
       en: { 
-        text: "You can reach us at info@kpanalytix.com or visit our contact page to send us a message. We're based in Riyadh, Saudi Arabia.",
+        text: "You can reach us at office@kpanalytix.com or visit our contact page to send us a message. We're based in Riyadh, Saudi Arabia.",
         link: { path: '/contact', text: 'Contact Us' }
       },
       ar: { 
-        text: "يمكنك التواصل معنا عبر info@kpanalytix.com أو زيارة صفحة الاتصال لإرسال رسالة. مقرنا في الرياض، المملكة العربية السعودية.",
+        text: "يمكنك التواصل معنا عبر office@kpanalytix.com أو زيارة صفحة الاتصال لإرسال رسالة. مقرنا في الرياض، المملكة العربية السعودية.",
         link: { path: '/contact', text: 'تواصل معنا' }
       }
     }
@@ -145,7 +145,7 @@ export const chatbotResponses = [
     keywords: ['experience', 'years', 'expertise', 'خبرة', 'سنوات'],
     response: {
       en: { 
-        text: "Our leadership brings 30+ years of combined experience in statistical economics, data science, and AI. We've worked with government entities, corporations, and research institutions.",
+        text: "Our leadership brings 25+ years of combined experience in statistical economics, data science, and AI. We've worked with government entities, corporations, and research institutions.",
         link: { path: '/experience', text: 'View Our Experience' }
       },
       ar: { 

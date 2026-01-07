@@ -3,7 +3,7 @@
  * @description Modern dark tech home page
  */
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion, useInView } from 'framer-motion'
@@ -32,11 +32,13 @@ function AnimatedSection({ children, className }) {
 
 function Home() {
   const { t } = useTranslation()
+  const [videoLoaded, setVideoLoaded] = useState(false)
 
   const stats = [
-    { value: '30+', label: t('about.yearsExperience') },
+    { value: '25+', label: t('about.yearsExperience') },
+    { value: '1,100+', label: t('about.employeesLed') },
     { value: '100+', label: t('about.projectsDelivered') },
-    { value: '10+', label: t('about.countriesServed') }
+    { value: '3', label: t('about.countriesServed') }
   ]
 
   const services = [
@@ -52,12 +54,17 @@ function Home() {
       <section className={styles.hero}>
         {/* Video Background */}
         <div className={styles.videoContainer}>
+          <div 
+            className={`${styles.videoPoster} ${videoLoaded ? styles.posterHidden : ''}`}
+            style={{ backgroundImage: `url(${import.meta.env.BASE_URL}home-video-poster.png)` }}
+          />
           <video 
-            className={styles.videoBackground}
+            className={`${styles.videoBackground} ${videoLoaded ? styles.videoVisible : ''}`}
             autoPlay 
             muted 
             loop 
             playsInline
+            onLoadedData={() => setVideoLoaded(true)}
           >
             <source src={`${import.meta.env.BASE_URL}videos/home-bg.mp4`} type="video/mp4" />
           </video>

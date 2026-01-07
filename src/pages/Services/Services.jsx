@@ -16,6 +16,7 @@ function Services() {
   const [direction, setDirection] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
   const [isAutoPlay, setIsAutoPlay] = useState(true)
+  const [videoLoaded, setVideoLoaded] = useState(false)
   const containerRef = useRef(null)
   const lastScrollTime = useRef(0)
   const touchStartY = useRef(0)
@@ -259,12 +260,17 @@ function Services() {
     <div className={styles.servicesWrapper}>
       {/* Video Background - loops continuously */}
       <div className={styles.videoContainer}>
+        <div 
+          className={`${styles.videoPoster} ${videoLoaded ? styles.posterHidden : ''}`}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}services-video-poster.png)` }}
+        />
         <video 
-          className={styles.videoBackground}
+          className={`${styles.videoBackground} ${videoLoaded ? styles.videoVisible : ''}`}
           autoPlay 
           muted 
           loop
           playsInline
+          onLoadedData={() => setVideoLoaded(true)}
         >
           <source src={`${import.meta.env.BASE_URL}videos/services-bg.mp4`} type="video/mp4" />
         </video>

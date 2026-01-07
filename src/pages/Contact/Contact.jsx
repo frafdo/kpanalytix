@@ -135,7 +135,7 @@ function Contact() {
                 </div>
                 <div>
                   <h4>{t('contact.info.address')}</h4>
-                  <p>[Address Line 1]<br />[Address Line 2]<br />Riyadh, Saudi Arabia</p>
+                  <p style={{ whiteSpace: 'pre-line' }}>{t('contact.info.addressValue')}</p>
                 </div>
               </div>
 
@@ -148,7 +148,7 @@ function Contact() {
                 </div>
                 <div>
                   <h4>{t('contact.info.email')}</h4>
-                  <a href="mailto:office@kpanalytix.com">office@kpanalytix.com</a>
+                  <a href={`mailto:${t('contact.info.emailValue')}`}>{t('contact.info.emailValue')}</a>
                 </div>
               </div>
 
@@ -160,18 +160,18 @@ function Contact() {
                 </div>
                 <div>
                   <h4>{t('contact.info.phone')}</h4>
-                  <a href="tel:+966XXXXXXXX">[+966 XX XXX XXXX]</a>
+                  <a href={`tel:${t('contact.info.phoneValue').replace(/[\s\[\]]/g, '')}`} dir="ltr" style={{ unicodeBidi: 'embed' }}>{t('contact.info.phoneValue')}</a>
                 </div>
               </div>
 
               <div className={styles.registrationInfo}>
                 <div className={styles.regItem}>
                   <span className={styles.regLabel}>{t('contact.info.crn')}</span>
-                  <span className={styles.regValue}>[CRN Number]</span>
+                  <span className={styles.regValue}>{t('contact.info.crnValue')}</span>
                 </div>
                 <div className={styles.regItem}>
                   <span className={styles.regLabel}>{t('contact.info.trn')}</span>
-                  <span className={styles.regValue}>[TRN Number]</span>
+                  <span className={styles.regValue}>{t('contact.info.trnValue')}</span>
                 </div>
               </div>
             </motion.div>

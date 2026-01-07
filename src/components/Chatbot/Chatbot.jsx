@@ -17,8 +17,8 @@ About KPAnalytix: Premier data analytics and AI consulting firm in Riyadh, Saudi
 CRN: 1010900500, TRN: 311458122400003
 
 Leadership:
-- Dr. Khaled Alqahtani - Founder & CEO, 30+ years experience, former King Saud University lecturer
-- Dr. Hend Aljobaily - Co-Founder & Chief Data Analytics & AI, Chief Data Scientist at NEOM
+- Dr. Konrad Pesendorfer - Founder & CEO, 25+ years executive leadership experience
+- Dr. Hend Aljobaily - Co-Founder & Chief Data Officer
 
 Services: Predictive Analytics, Forecasting, Dashboards, Data Governance, AI Models, Statistical Consulting, KPI Measurement, Policy Design, Impact Assessment, International Economics, Best Practices, Benchmarking
 
