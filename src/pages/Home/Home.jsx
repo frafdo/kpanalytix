@@ -38,7 +38,7 @@ function Home() {
     { value: '25+', label: t('about.yearsExperience') },
     { value: '1,100+', label: t('about.employeesLed') },
     { value: '100+', label: t('about.projectsDelivered') },
-    { value: '3', label: t('about.countriesServed') }
+    { value: '4', label: t('about.countriesServed') }
   ]
 
   const services = [
