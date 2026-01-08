@@ -258,7 +258,7 @@
       "address": "Address",
       "addressValue": "7546 Qurtubah\nUnit No 1110\nRiyadh 13244 – 2284\nSaudi Arabia",
       "email": "Email",
-      "emailValue": "office@kpanalytix.com",
+      "emailValue": "info@kpanalytix.com",
       "phone": "Phone",
       "phoneValue": "[+966 XX XXX XXXX]",
       "crn": "Commercial Registration",
@@ -353,7 +353,7 @@
     },
     "contact": {
       "title": "Contact Us",
-      "text": "If you have questions about this Privacy Policy or our privacy practices, please contact us at office@kpanalytix.com"
+      "text": "If you have questions about this Privacy Policy or our privacy practices, please contact us at info@kpanalytix.com"
     }
   },
   "terms": {
@@ -393,7 +393,7 @@
     },
     "contact": {
       "title": "Contact Information",
-      "text": "For any questions regarding these Terms and Conditions, please contact us at office@kpanalytix.com"
+      "text": "For any questions regarding these Terms and Conditions, please contact us at info@kpanalytix.com"
     }
   }
 }

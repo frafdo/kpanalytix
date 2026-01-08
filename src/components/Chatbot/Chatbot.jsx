@@ -22,7 +22,7 @@ Leadership:
 
 Services: Predictive Analytics, Forecasting, Dashboards, Data Governance, AI Models, Statistical Consulting, KPI Measurement, Policy Design, Impact Assessment, International Economics, Best Practices, Benchmarking
 
-Contact: office@kpanalytix.com, Riyadh, Saudi Arabia
+Contact: info@kpanalytix.com, Riyadh, Saudi Arabia
 
 Guidelines:
 - Be helpful, professional, concise
