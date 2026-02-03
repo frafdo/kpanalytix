@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // For Cloudflare Pages deployment (custom domain)
-  base: '/',
+  base: '/kpanalytix/',
   css: {
     modules: {
       localsConvention: 'camelCase'
