@@ -21,6 +21,7 @@ function Team() {
       role: t('team.founder.role'),
       bio: t('teamPage.founderFullBio'),
       initials: 'KP',
+      image: `${import.meta.env.BASE_URL}images/team/dr_konrad.png`,
       achievements: [
         t('teamPage.achievement1'),
         t('teamPage.achievement2'),
@@ -41,6 +42,7 @@ function Team() {
       role: t('team.cofounder.role'),
       bio: t('teamPage.cofounderFullBio'),
       initials: 'HA',
+      image: `${import.meta.env.BASE_URL}images/team/dr_hend.png`,
       achievements: [
         t('teamPage.cofounderAchievement1'),
         t('teamPage.cofounderAchievement2'),
@@ -112,9 +114,11 @@ function Team() {
             {/* Member Image */}
             <div className={styles.memberImage}>
               <div className={styles.imageWrapper}>
-                <div className={styles.initialsCircle}>
-                  {teamMembers[activeIndex].initials}
-                </div>
+                <img 
+                  src={teamMembers[activeIndex].image} 
+                  alt={teamMembers[activeIndex].name}
+                  className={styles.profileImage}
+                />
                 <div className={styles.imageGlow}></div>
               </div>
             </div>

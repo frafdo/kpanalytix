@@ -58,6 +58,32 @@
   position: relative;
 }
 
+.imageWrapper::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 10px);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 9 , 32, 1) 0%,
+    rgba(20, 15, 50, 1) 60%,
+    rgba(45, 30, 80, 1) 80%,
+    rgba(60, 52, 101, 1) 100%
+  );
+  z-index: 0;
+}
+
+.profileImage {
+  width: 280px;
+  height: 350px;
+  object-fit: cover;
+  object-position: top center;
+  position: relative;
+  z-index: 1;
+}
+
 .initialsCircle {
   width: 220px;
   height: 220px;
@@ -73,18 +99,7 @@
   z-index: 1;
 }
 
-.imageGlow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 260px;
-  height: 260px;
-  background: var(--color-secondary);
-  filter: blur(60px);
-  opacity: 0.3;
-  z-index: 0;
-}
+
 
 /* Member Info */
 .memberInfo {
@@ -286,9 +301,14 @@
     font-size: var(--font-size-5xl);
   }
 
+  .profileImage {
+    width: 220px;
+    height: 280px;
+  }
+
   .imageGlow {
-    width: 200px;
-    height: 200px;
+    width: 260px;
+    height: 320px;
   }
 
   .scrollWheel {
@@ -327,6 +347,11 @@
     width: 160px;
     height: 160px;
     font-size: var(--font-size-4xl);
+  }
+
+  .profileImage {
+    width: 180px;
+    height: 230px;
   }
 
   .imageGlow {
